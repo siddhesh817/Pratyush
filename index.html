@@ -55,25 +55,54 @@
         
         nav a:hover { color: var(--secondary); }
 
-        /* Hero Section */
+        /* Hero Section (WITH IMAGE LAYOUT) */
         .hero {
             background: linear-gradient(135deg, var(--primary), #0f172a);
             color: white;
             padding: 60px 20px;
-            text-align: center;
         }
 
-        .hero h1 {
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap-reverse; /* Stacks image on top on mobile */
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+
+        .hero-text h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
             color: #f8fafc;
         }
 
-        .hero p {
+        .hero-text p {
             font-size: 1.2rem;
             color: #cbd5e1;
-            max-width: 600px;
-            margin: 0 auto 20px auto;
+            margin-bottom: 15px;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .owner-img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--secondary);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
         /* Quick Stats Bar */
@@ -219,6 +248,21 @@
             transform: scale(1.05);
             background: #20ba56;
         }
+
+        /* Mobile Responsiveness for Hero */
+        @media (max-width: 768px) {
+            .hero-content {
+                text-align: center;
+                flex-direction: column-reverse;
+            }
+            .hero-text {
+                text-align: center;
+            }
+            .owner-img {
+                width: 200px;
+                height: 200px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -237,11 +281,20 @@
         </div>
     </nav>
 
-    <!-- Hero Header -->
+    <!-- Hero Header (UPDATED WITH IMAGE) -->
     <header class="hero">
-        <h1>🚀 PRATYUSH Retail Pvt. Ltd.</h1>
-        <p>संपूर्ण व्यवसाय मॉडेल - आजच्या डिजिटल युगात स्वतःचा व्यवसाय सुरू करणे आता सोपे झाले आहे!</p>
-        <p style="color: var(--secondary); font-weight: bold;">PRATYUSH देत आहे रेडीमेड बिझनेस सिस्टम – घरबसल्या कमाईची संधी 💼</p>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>PRATYUSH Retail Pvt. Ltd.</h1>
+                <p>संपूर्ण व्यवसाय मॉडेल - आजच्या डिजिटल युगात स्वतःचा व्यवसाय सुरू करणे आता सोपे झाले आहे!</p>
+                <p style="color: var(--secondary); font-weight: bold;">PRATYUSH देत आहे रेडीमेड बिझनेस सिस्टम – घरबसल्या कमाईची संधी 💼</p>
+            </div>
+            
+            <div class="hero-image">
+                <!-- REPLACE THE LINK IN 'src' BELOW WITH YOUR ACTUAL IMAGE LINK -->
+                <img src="assets/front_img.jpeg" alt="Owner of Pratyush Retail" class="owner-img">
+            </div>
+        </div>
     </header>
 
     <!-- Trust Stats -->
@@ -342,13 +395,13 @@
             <h4 style="margin-top: 15px; color: var(--primary);">👉 आजच सुरुवात करा आणि आर्थिक स्वातंत्र्य मिळवा 🚀</h4>
         </div>
 
-        <!-- Contact Section -->
+        <!-- Contact Section (UPDATED) -->
         <div class="contact-info" id="contact">
             <h2 class="section-title">📍 Business Location & Contact</h2>
-            <p><b>Address:</b> At/post Sonai, Tal. Newasa, Dist. Ahilyanagar</p>
-            <p><b>City:</b> Sonai | <b>District:</b> Ahmed Nagar | <b>State:</b> Maharashtra</p>
-            <p><b>Pincode:</b> 414105</p>
-            <p style="margin-top: 10px; color: var(--text-light);">Email: support@1qlik.com</p>
+            <p><b>Address:</b> Sai Nagar, Amravati</p>
+            <p><b>City:</b> Amravati | <b>District:</b> Amravati | <b>State:</b> Maharashtra</p>
+            <p><b>Pincode:</b> 444607</p>
+            <p style="margin-top: 10px; color: var(--text-light);">Email: bharapteshilpa@gmail.com</p>
         </div>
 
     </div>

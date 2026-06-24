@@ -1,11 +1,14 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 import os
+from fastapi.staticfiles import StaticFiles
+
 
 app = FastAPI(
     title="Pratyush Retail Portal",
     description="FastAPI backend serving a unified digital storefront"
 )
+app.mount("/assets", StaticFiles(directory="assets"), name="assets")
 
 @app.get("/", response_class=HTMLResponse)
 async def serve_storefront():
